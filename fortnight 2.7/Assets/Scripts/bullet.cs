@@ -10,6 +10,7 @@ public class bullet : MonoBehaviour {
     public float speed;
     public float destroy_time;
     public float damage;
+    public string playerTag;
 
     private Vector2 direction;
     private Vector2 startingPosition;
@@ -25,8 +26,9 @@ public class bullet : MonoBehaviour {
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Player")
+        if (collision.gameObject.tag != playerTag)
         {
+  
             Destroy(this.gameObject);
         }
     }
@@ -39,5 +41,10 @@ public class bullet : MonoBehaviour {
         //    Destroy(GameObject bullet);
         //}
 
+    }
+
+    public void setPlayer(string p)
+    {
+        playerTag = p;
     }
 }

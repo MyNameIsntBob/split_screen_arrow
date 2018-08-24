@@ -31,11 +31,12 @@ public class BulletManeger : MonoBehaviour
 
             spacercounter = 0.0f;
             // Create the Bullet from the Bullet Prefab
-            var bullet = (GameObject)Instantiate(
+            GameObject bullet = (GameObject)Instantiate(
                 prefab,
                 this.transform.position,
                 this.transform.rotation);
-
+            bullet bscript = bullet.GetComponent<bullet>();
+            bscript.setPlayer(transform.parent.tag);
 
             Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 

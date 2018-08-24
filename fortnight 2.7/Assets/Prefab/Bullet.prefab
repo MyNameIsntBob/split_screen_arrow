@@ -8,22 +8,22 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
+  m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1055583771376106}
-  m_IsPrefabParent: 1
+  m_IsPrefabAsset: 1
 --- !u!1 &1055583771376106
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4581805375784326}
   - component: {fileID: 212863031921118884}
   - component: {fileID: 50511000426869934}
   - component: {fileID: 61669063742970916}
   - component: {fileID: 114459134111340168}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet
   m_TagString: bullet
   m_Icon: {fileID: 0}
@@ -33,7 +33,7 @@ GameObject:
 --- !u!4 &4581805375784326
 Transform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055583771376106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -47,7 +47,7 @@ Transform:
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055583771376106}
   m_BodyType: 0
@@ -66,7 +66,7 @@ Rigidbody2D:
 --- !u!61 &61669063742970916
 BoxCollider2D:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055583771376106}
   m_Enabled: 1
@@ -91,7 +91,7 @@ BoxCollider2D:
 --- !u!114 &114459134111340168
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055583771376106}
   m_Enabled: 1
@@ -100,12 +100,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4000
-  destroy_time: 0.7
+  destroy_time: 1000
   damage: 5
+  playerTag: 
 --- !u!212 &212863031921118884
 SpriteRenderer:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1055583771376106}
   m_Enabled: 1
@@ -147,3 +148,4 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+  m_SpriteSortPoint: 0

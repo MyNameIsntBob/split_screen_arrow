@@ -17,7 +17,7 @@ public class pause_screen : MonoBehaviour {
 	void Start () {
         Time.timeScale = 1;
         player_dead = false;
-        player_pos = GameObject.FindWithTag("Player").transform;
+        player_pos = GameObject.FindWithTag("Player_1").transform;
         //starting_point.position = new Vector2(0, 0);
 
 	}

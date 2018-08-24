@@ -42,6 +42,23 @@ public class Player : MonoBehaviour {
             rb2d.velocity = (nockback * nock_back);
             in_time_counter = 0;
         }
+        if (collision.gameObject.tag == "bullet")
+        {
+            takeDamage(1);
+            print("ouch");
+        }
+    }
+
+
+    private void Update()
+    {
+        if (current_health <= 0)
+        {
+            dead = true;
+            //    Time.timeScale = 0;
+            Destroy(this.gameObject, 1f);
+        }
+
     }
 
     void FixedUpdate () {
@@ -52,12 +69,12 @@ public class Player : MonoBehaviour {
             in_time_counter += Time.deltaTime;
         }
 
-        if (current_health <= 0)
-        {
-            dead = true;
-        //    Time.timeScale = 0;
-            Destroy(this.gameObject, 1f);
-        }
+        //if (current_health <= 0)
+        //{
+        //    dead = true;
+        //    //    Time.timeScale = 0;
+        //    Destroy(this.gameObject, 1f);
+        //}
 
         //if (dead == true)
         //{
@@ -97,6 +114,11 @@ public class Player : MonoBehaviour {
             dodgecounter = 0;
         }
 	}
+
+    public void takeDamage(int damage)
+    {
+        current_health -= damage;
+    }
 
     /*
     private void Dodge(float rollspeed, float distance)
