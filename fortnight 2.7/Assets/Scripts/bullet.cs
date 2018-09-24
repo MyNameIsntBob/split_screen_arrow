@@ -10,13 +10,14 @@ public class bullet : MonoBehaviour {
     public float speed;
     public float destroy_time;
     public float damage;
-    public string playerTag;
+    //public string playerTag;
 
     private Vector2 direction;
     private Vector2 startingPosition;
-	
+    private object rd2d;
+
     // Use this for initialization
-	void Start () {
+    void Start () {
         rb2d = GetComponent<Rigidbody2D>();
         startingPosition = this.transform.position;
         direction = transform.right;
@@ -26,10 +27,13 @@ public class bullet : MonoBehaviour {
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != playerTag)
+        if (collision.gameObject.tag != "wall")
         {
-  
             Destroy(this.gameObject);
+        }
+        else
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x * - 1, rb2d.velocity.y * - 1);
         }
     }
 
@@ -43,8 +47,10 @@ public class bullet : MonoBehaviour {
 
     }
 
+    /*
     public void setPlayer(string p)
     {
         playerTag = p;
     }
+    */
 }
